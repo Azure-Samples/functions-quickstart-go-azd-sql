@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "go build (functions)",
+      "type": "shell",
+      "command": "go build -o bin\\app.exe .",
+      "problemMatcher": "$go",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "func: host start",
+      "type": "shell",
+      "command": "func host start",
+      "dependsOn": "go build (functions)",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "azureFunctions",
+        "pattern": [
+          {
+            "regexp": "^(.*)$",
+            "message": 1
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*$",
+          "endsPattern": "^.*(Job host started|Host lock lease acquired by instance ID).*$"
+        }
+      }
+    }
+  ]
+}

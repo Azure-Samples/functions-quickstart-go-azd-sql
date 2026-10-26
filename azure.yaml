@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+name: functions-quickstart-go-azd-sql
+metadata:
+  template: functions-quickstart-go-azd-sql@1.0.0
+hooks:
+  postprovision:
+    posix:
+      shell: sh
+      run: ./scripts/setup-sql.sh
+    windows:
+      shell: pwsh
+      run: ./scripts/setup-sql.ps1
+services:
+  api:
+    project: .
+    language: go
+    host: function

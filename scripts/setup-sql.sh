@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+SQL_SERVER_FQDN=$(azd env get-value SQL_SERVER_FQDN)
+SQL_DATABASE=$(azd env get-value SQL_DATABASE)
+SQL_IDENTITY_NAME=$(azd env get-value SQL_IDENTITY_NAME)
+SQL_IDENTITY_CLIENT_ID=$(azd env get-value SQL_IDENTITY_CLIENT_ID)
+export SQL_SERVER_FQDN SQL_DATABASE SQL_IDENTITY_NAME SQL_IDENTITY_CLIENT_ID
+go run ./cmd/setup
