@@ -426,3 +426,19 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# Go and Azure Functions local state
+.azure/
+bin/
+*.exe
+*.test
+*.out
+go.work
+go.work.sum
+vendor/
+local.settings.json
+.env
+.env.*
+__azurite_db*__.json
+__blobstorage__/
+__queuestorage__/
