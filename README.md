@@ -17,8 +17,8 @@ urlFragment: functions-quickstart-go-azd-sql
 # Azure Functions Go SQL Trigger
 
 This sample follows the [Go timer quickstart](https://github.com/Azure-Samples/functions-quickstart-go-azd-timer)
-and deploys to Linux Flex Consumption with `azd`. Go worker packages are preview
-packages. The `productsChanged` function receives batches of inserts, updates,
+and deploys to Linux Flex Consumption with `azd` using Go worker v1.0.0 (GA).
+The `productsChanged` function receives batches of inserts, updates,
 and deletes from `dbo.Products` using Azure SQL change tracking.
 
 ```json
