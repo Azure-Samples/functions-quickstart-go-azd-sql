@@ -3,7 +3,7 @@ module functions-quickstart-go-azd-sql
 go 1.25.0
 
 require (
-	github.com/azure/azure-functions-golang-worker v0.7.0-preview
+	github.com/azure/azure-functions-golang-worker v1.0.0
 	github.com/microsoft/go-mssqldb v1.11.2
 )
 
